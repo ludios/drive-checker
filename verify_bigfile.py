@@ -3,7 +3,7 @@ import os
 import sys
 
 fname = sys.argv[1]
-start_at = long(sys.argv[2])
+start_at = long(sys.argv[2].replace(",", ""))
 f = open(fname, "rb")
 f.seek(start_at)
 while True:
