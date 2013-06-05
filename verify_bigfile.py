@@ -3,9 +3,12 @@ import os
 import sys
 
 fname = sys.argv[1]
-start_at = long(sys.argv[2].replace(",", ""))
+try:
+	start_at = long(sys.argv[2].replace(",", ""))
+except IndexError:
+	start_at = 0
 f = open(fname, "rb")
-f.seek(start_at)
+f.seek(start_at - (start_at % (64 * 1024 + 128/8)))
 while True:
 	block = f.read(64 * 1024)
 	written_dig = f.read(128/8)
