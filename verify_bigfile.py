@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3 -Bu
 
 from hashlib import md5
 import os
