@@ -1,4 +1,4 @@
-#!/usr/bin/python3 -Bu
+#!/usr/bin/python2 -B
 
 from hashlib import md5
 import subprocess
@@ -9,5 +9,5 @@ p = subprocess.Popen('openssl enc -aes-128-ctr -pass "pass:$(dd if=/dev/urandom 
 while True:
 	rand = p.stdout.read(32 * 1024)
 	dig = md5(rand).digest()
-	sys.stdout.buffer.write(rand)
-	sys.stdout.buffer.write(dig)
+	sys.stdout.write(rand)
+	sys.stdout.write(dig)
