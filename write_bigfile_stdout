@@ -1,4 +1,4 @@
-#!/usr/bin/python2 -B
+#!/usr/bin/env python2
 
 from hashlib import md5
 import subprocess
